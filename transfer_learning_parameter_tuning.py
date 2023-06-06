@@ -18,11 +18,11 @@ import sklearn
 from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score
 
 
-trainset = '/content/drive/MyDrive/Research/attack/train-images-idx3-ubyte'
-trainlabels = '/content/drive/MyDrive/Research/attack/train-labels-idx1-ubyte'
+trainset = '/datasets/attack dataset/train-images-idx3-ubyte'
+trainlabels = '/datasets/attack dataset/train-labels-idx1-ubyte'
 
-testset = '/content/drive/MyDrive/Research/attack/test-images-idx3-ubyte'
-testlabels = '/content/drive/MyDrive/Research/attack/test-labels-idx1-ubyte'
+testset = '/datasets/attack dataset/test-images-idx3-ubyte'
+testlabels = '/datasets/attack dataset/test-labels-idx1-ubyte'
 
 X_train_attack= idx2numpy.convert_from_file(trainset)
 y_train_attack = idx2numpy.convert_from_file(trainlabels)
@@ -40,7 +40,7 @@ y_valid_trf, y_train_trf = y_train_attack[:5000], y_train_attack[5000:]
 y_train_trf_categorical = tf.keras.utils.to_categorical(y_train_trf, nb_classes)
 y_valid_trf_categorical = tf.keras.utils.to_categorical(y_valid_trf, nb_classes)
 
-with open('/content/drive/MyDrive/Research/new_network_model.h5', 'rb') as f:
+with open('./new_network_model.h5', 'rb') as f:
       base_model = pickle.load(f)
 
 learning_rates = [0.1, 0.2, 0.3]

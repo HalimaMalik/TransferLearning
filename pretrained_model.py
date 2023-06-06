@@ -13,11 +13,11 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import ConfusionMatrixDisplay
 import pickle
 
-trainset = './dataset/pretrained dataset/train-images-idx3-ubyte'
-trainlabels = './dataset/pretrained dataset/train-labels-idx1-ubyte'
+trainset = 'datasets/pretrained dataset/train-images-idx3-ubyte'
+trainlabels = 'datasets/pretrained dataset/train-labels-idx1-ubyte'
 
-testset = './dataset/pretrained dataset/test-images-idx3-ubyte'
-testlabels = './dataset/pretrained dataset/test-labels-idx1-ubyte'
+testset = 'datasets/pretrained dataset/test-images-idx3-ubyte'
+testlabels = 'datasets/pretrained dataset/test-labels-idx1-ubyte'
 
 X_full = idx2numpy.convert_from_file(trainset)
 y_full = idx2numpy.convert_from_file(trainlabels)

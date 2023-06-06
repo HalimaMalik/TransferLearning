@@ -21,9 +21,8 @@ import sklearn
 from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score
 from IPython import display
 
-#(train_images, train_labels), (_, _) = tf.keras.datasets.mnist.load_data()
-trainset = '..'
-trainlabels = '..'
+trainset = 'datasets/GAN/class0-images-idx3-ubyte'
+trainlabels = 'datasets/GAN/class0-labels-idx1-ubyte'
 
 train_images= idx2numpy.convert_from_file(trainset)
 train_labels = idx2numpy.convert_from_file(trainlabels)
@@ -148,7 +147,7 @@ def save_last_epoch(model, test_input):
   for i in range(predictions.shape[0]):
     plt.imshow(predictions[i, :, :, 0] * 127.5 + 127.5, cmap='gray')
     plt.axis('off')   
-    plt.savefig('GAN/class_0{:d}.png'.format(i), bbox_inches='tight', pad_inches = 0)
+    plt.savefig('GAN/class_0{:d}.png'.format(i), bbox_inches='tight', pad_inches = 0)  //specify the path to save the generated images
 
 train(train_dataset, EPOCHS)
 
